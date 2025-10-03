@@ -1,66 +1,135 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: 'Sarabun', sans-serif;
+        }
 
-h1, p {
-    text-align: center;
-    margin: 0;
-}
+        h1, p {
+            text-align: center;
+            margin: 0;
+        }
 
-h1 {
-    margin-top: 20px;
-}
+        h1 {
+            margin-top: 20px;
+            font-weight: 350;
+        }
 
-p {
-    margin-top: 10; 
-}
+        p {
+            margin-top: 10px;
+            color: #555555;
+        }
 
-#temple.templeall {
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
+        /* Control Panel */
+        .control-panel {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-#watthai.wat {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 300px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    position: relative;
-}
+        .control-panel button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            background-color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
 
-#watthai.wat:hover {
-    transform: scale(1.03);
-}
+        .control-panel button.active {
+            background-color: #333;
+            color: white;
+        }
 
-#imagewatthai.imagewatthai2 {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
+        .control-panel button:hover {
+            background-color: #555;
+            color: white;
+        }
 
-#watthai.wat p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin: 0;
-    z-index: 1;
-    padding: 10px 20px;
-    border-radius: 8px;
-}
+        #temple.templeall {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            display: grid;
+            gap: 20px;
+            justify-items: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Grid Columns Control */
+        #temple.templeall.cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        #temple.templeall.cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #temple.templeall.cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            #temple.templeall.cols-4 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            #temple.templeall.cols-4,
+            #temple.templeall.cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            #temple.templeall {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .wat {
+            background-color: rgba(255, 255, 255, 0.9);
+            overflow: hidden;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .wat:hover {
+            transform: scale(1.03);
+        }
+
+        .imagewatthai2 {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .wat p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            z-index: 1;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
