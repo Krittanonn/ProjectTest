@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple my Region</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <h1>TEMPLE BY REGION</h1>
+    <p>ค้นหาข้อมูลวัดตามภูมิภาค</p>
+
+    <div class="control-panel">
+        <div>
+            <strong>จำนวนคอลัมน์:</strong>
+            <button id="col2" onclick="setColumns(2)">2 คอลัมน์</button>
+            <button id="col3" onclick="setColumns(3)">3 คอลัมน์</button>
+            <button id="col4" class="active" onclick="setColumns(4)">4 คอลัมน์</button>
+        </div>
+        <div style="margin-top: 15px;">
+            <strong>Auto Play:</strong>
+            <button id="autoPlayBtn" onclick="toggleAutoPlay()">เปิด</button>
+        </div>
+    </div>
+
+    <div id="temple" class="templeall cols-4">
+      <div id="watthai1" class="wat">
+        <img id="imagewatthai1" class="imagewatthai2" src="img/first.jpeg" alt="วัดภาคเหนือ" />
+        <p>ภาคเหนือ</p>
+      </div>
+
+      <div id="watthai2" class="wat">
+        <img id="imagewatthai2" class="imagewatthai2" src="img/second.jpg " alt="วัดภาคกลาง" />
+        <p>ภาคกลาง</p>
+      </div>
+
+      <div id="watthai3" class="wat">
+        <img id="imagewatthai3" class="imagewatthai2" src="img/tri.jpg" alt="วัดภาคตะวันออกเฉียงเหนือ" />
+        <p>ภาคตะวันออกเฉียงเหนือ</p>
+      </div>
+
+      <div id="watthai4" class="wat">
+        <img id="imagewatthai4" class="imagewatthai2" src="img/four.jpg" alt="วัดภาคตะวันตก" />
+        <p>ภาคตะวันตก</p>
+      </div>
+    </div>
+   
+    <script src="js/script.js"></script>
+</body>
+</html>
